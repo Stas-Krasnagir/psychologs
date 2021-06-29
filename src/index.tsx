@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import firebase from 'firebase';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,3 +21,24 @@ serviceWorkerRegistration.unregister();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDYvJR-S2FzyDS1tnWPxnJ1ZG4jozmzoCs",
+  authDomain: "test-72ef6.firebaseapp.com",
+  databaseURL: "https://test-72ef6-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "test-72ef6",
+  storageBucket: "test-72ef6.appspot.com",
+  messagingSenderId: "907241032914",
+  appId: "1:907241032914:web:860504fa40cb8fec84310b"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const storage = firebase.storage();
+const database = firebase.database();
+
+export { storage, firebase, database as default };
